@@ -1,0 +1,41 @@
+
+
+mooc_acceuil_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: MoocAcceuilBundle:Default:index }
+mooc_acceuil_testpage:
+    path:     /
+    defaults: { _controller: MoocAcceuilBundle:Acceuil:home }    
+mooc_about_testpage:
+    path:     /about
+    defaults: { _controller: MoocAcceuilBundle:About:about }
+mooc_gallery_testpage:
+    path:     /classes
+    defaults: { _controller: MoocAcceuilBundle:Classes:classes } 
+mooc_blog_testpage:
+    path:     /blog
+    defaults: { _controller: MoocAcceuilBundle:Blog:blog }
+mooc_contact_testpage:
+    path:     /contact
+    defaults: { _controller: MoocAcceuilBundle:Contact:contact }
+register_Apprenat:
+    path:     /RegistrationApprenant
+    defaults: { _controller: MoocAcceuilBundle:register:Apprenant }
+register_Formateur:
+    path:     /RegistrationFormateur
+    defaults: { _controller: MoocAcceuilBundle:register:Formateur }
+mooc_profil:
+    path:     /profil/{id}
+    defaults: { _controller: MoocAcceuilBundle:Blog:AfficherProfil}  
+register_Entreprise:
+    path:     /RegistrationEntreprise
+    defaults: { _controller: MoocAcceuilBundle:register:Entreprise }    
+invitation_formateur:
+    path:     /InvitationFormateur
+    defaults: { _controller: MoocAcceuilBundle:Blog:invitationFormateur }    
+notification_formateur:
+    path:     /notificationFormateur
+    defaults: { _controller: MoocAcceuilBundle:Blog:notification }    
+notification_etat:
+    path:     /etat
+    defaults: { _controller: MoocAcceuilBundle:Blog:modifierEtat }    

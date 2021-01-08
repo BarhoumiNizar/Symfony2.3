@@ -1,0 +1,28 @@
+mooc_admin_back_offie_homepage:
+    path:     /admin
+    defaults: { _controller: MoocAdminBackOffieBundle:Default:index }
+    
+    
+mooc_admin_back_offie_enableUser:
+    path:     /admin/enableuser/{id}
+    defaults: { _controller: MoocAdminBackOffieBundle:Default:enableUser }
+    
+  
+mooc_admin_back_offie_disableUser:
+    path:     /admin/disableuser/{id}
+    defaults: { _controller: MoocAdminBackOffieBundle:Default:disableUser }
+    
+
+mooc_admin_back_offie_DeleteUser:
+    path:     /admin/supprimer/{id}
+    defaults: { _controller: MoocAdminBackOffieBundle:Default:removeUser }
+
+
+mooc_admin_back_offie_viewutilisateursquelette:
+    path:     /admin/viewutilisateur
+    defaults: { _controller: MoocAdminBackOffieBundle:Default:viewutilisateursquelette }
+    
+
+mooc_admin_back_offie_viewutilisateur:
+    path:     /admin/viewutilisateur/{filter}
+    defaults: { _controller: MoocAdminBackOffieBundle:Default:viewutilisateurTableau }

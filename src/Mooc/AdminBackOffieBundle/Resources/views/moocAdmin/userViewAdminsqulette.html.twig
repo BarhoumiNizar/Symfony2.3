@@ -1,0 +1,87 @@
+        
+<div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Display Users <small>View all the Users</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="glyphicon glyphicon-tags"></i> Users/Display Users
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+        <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-8">
+                        <h2>Users List</h2>
+                            </div>
+                            <div class="col-lg-4" style="margin-top: 2%;">
+                           <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search by Id,Name,Role..." name="find" id="find">
+            <div class="input-group-btn">
+                <span class="btn btn-default"><i class="glyphicon glyphicon-search"></i></span>
+            </div>
+        </div>
+                        </div>
+                        </div>
+                    </div>
+        </div>
+<div id="tableau" class="row">
+                    
+                 
+                </div>
+                                
+                                
+                                
+                                    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Confirm Delete</h4>
+                </div>
+            
+                <div class="modal-body">
+                    <p>You are about to delete one user, this procedure is irreversible.</p>
+                    <p>Do you want to proceed?</p>
+                    <p class="debug-url"></p>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-danger btn-ok">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>  
+$(document).ready(function(){
+loadtableau('null');
+});
+
+$('#find').keyup(function() {
+loadtableau(document.getElementById("find").value);
+});
+        
+        
+        
+function loadtableau(a)
+{
+if(a=="")
+    a="null";
+    $.ajax({ url: "/PiMoocWeb1/web/app_dev.php/admin/viewutilisateur/"+a,
+    type:'GET',
+        success: function(data){
+           $('#tableau').html(data);
+        }});}
+
+
+
+ $('#confirm-delete').on('show.bs.modal', function(e) {
+        $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+        $('.debug-url').html('User For Delete: <strong>' + e.relatedTarget.name + '</strong>');});
+            </script>

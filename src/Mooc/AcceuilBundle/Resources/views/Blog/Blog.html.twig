@@ -1,0 +1,102 @@
+{% extends "MoocAcceuilBundle:TemplateMooc:layout.html.twig" %}
+{% block styleAndJS %} 
+<link href="{{ asset('css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<!-- Custom Theme files -->
+<link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Literacy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- for bootstrap working -->
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+<script src="{{ asset('js/responsiveslides.min.js') }}"></script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+      // Slideshow 1
+      $("#slider1").responsiveSlides({
+         auto: true,
+		 nav: true,
+		 speed: 500,
+		 namespace: "callbacks",
+      });
+    });
+  </script>
+  <!-- web-fonts -->
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,600italic,400italic,600,300italic,300,700italic,800,800italic' rel='stylesheet' type='text/css'>
+	<!-- web-fonts -->
+<script type="text/javascript" src="{{ asset('js/move-top.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/easing.js') }}"></script>
+<!--/script-->
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+</script>    
+{% endblock %}
+{% block container %} 
+    <div class="content">
+		<!-- blogs -->
+<div class="blog">
+	<div class="container">
+		<h2 class="heading text-center">Blogs</h2>
+			<div class="single-inline">
+		                    
+							{% set x = 0 %}
+							{% if user is defined %}
+                         		<h1>{{user}}	</h1>	
+                             {%else%}
+                               {# {% redirect 'classes' %}#}
+							   {#<script>
+							   document.location.href='classes';
+							   </script>#}
+								<h1>{{x}}</h1>	
+                          {%endif%}								
+							
+							{% for personne in personnes %}
+					      
+							 {% set x = x + 1 %}
+							 
+				<div class="col-md-6 blog-to">						
+						<a href="{{path('mooc_profil',{'id':personne.id})}}"><img class="img-responsive sin-on" src="{{asset('images/'~personne.image)}}" alt="" /></a>
+                                                
+							<div class="blog-top">
+							
+							<div class="top-blog">
+							   <a class="fast" href="single.html"><u>{{x}}</u></a>
+								<a class="fast" href="single.html">{{personne.nom}}</a>
+                                                                <p>{{personne.email}}</p>
+								<a  href="{{path('mooc_profil',{'id':personne.id})}}" class="more">Détail<span> </span></a>
+								
+							</div>
+							<div class="clearfix"> </div>
+					</div>
+					</div>
+                                {% endfor %}                                
+							
+					<div class="clearfix"> </div>
+				</div>
+				<nav>
+				  <ul class="pagination blog-pagination">
+					<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+					<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+					<li><a href="#">2 <span class="sr-only"></span></a></li>
+					<li><a href="#">3 <span class="sr-only"></span></a></li>
+					<li><a href="#">4 <span class="sr-only"></span></a></li>
+					<li><a href="#">5 <span class="sr-only"></span></a></li>
+					 <li> <a href="#" aria-label="Next"><span aria-hidden="true">»</span> </a> </li>
+				  </ul>
+				</nav>
+			</div>
+			</div>
+	<!-- //blogs -->
+	</div>
+{% endblock %}    

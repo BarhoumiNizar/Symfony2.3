@@ -1,0 +1,150 @@
+{% extends "MoocAcceuilBundle:TemplateMooc:layout.html.twig" %}
+{% block styleAndJS %} 
+<link href="{{ asset('css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<!-- Custom Theme files -->
+<link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Literacy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- for bootstrap working -->
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+<script src="{{ asset('js/responsiveslides.min.js') }}"></script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+      // Slideshow 1
+      $("#slider1").responsiveSlides({
+         auto: true,
+		 nav: true,
+		 speed: 500,
+		 namespace: "callbacks",
+      });
+    });
+  </script>
+  <!-- web-fonts -->
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,600italic,400italic,600,300italic,300,700italic,800,800italic' rel='stylesheet' type='text/css'>
+	<!-- web-fonts -->
+<script type="text/javascript" src="{{ asset('js/move-top.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/easing.js') }}"></script>
+<!--/script-->
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+</script>    
+{% endblock %}
+{% block container %} 
+    <div class="content">
+		<!-- blogs -->
+<div class="blog">
+	<div class="container">
+		<h2 class="heading text-center">Blogs</h2>
+			<div class="single-inline">
+                            
+				
+                                  
+                                        
+                                                
+							
+                                                            
+                                                       
+                                                        {%if(detail.type=='Entreprise')%} 
+                            <table  width="80%">
+                                                        <tr><td rowspan="6">
+                                                                <img class="img-responsive sin-on" src="{{asset('images/'~detail.image)}}" alt="" />
+                                                            </td>
+                                                        <td style="font-size: 24px">{{detail.nom}}</td> </tr>
+                                                        <tr><td>      <p style="font-size: 24px">{{detail.email}}</p></td></tr>
+                                                         <tr><td>      <p style="font-size: 24px">{{detail.domaine}}</p></td></tr>
+                                                          <tr><td>      <p style="font-size: 24px">{{detail.telephone}}</p></td></tr>
+                                                           <tr><td>      <p style="font-size: 24px">{{detail.adresse}}</p></td></tr>
+                                                           <tr><td>   <a href="#" class="fast"> <p style="font-size: 24px">Inviter</p></a>
+                                                               </td></tr>
+															    <tr><td>
+															   {% if(app.user.type==detail.type)%}
+															   
+															   alert('ok oko oko');
+															   
+															   {%endif%}
+															   {%if(app.user.type!=detail.type) %}
+															  <h1>{{app.user.id}}</h1>
+																
+															   {%endif%}
+															   <form method=post>
+															   <input type=text value="{{app.user.id}}"/>
+															   <input type=text value="{{detail.id}}"/>
+															   <input type="submit" value="Inviter"/>
+															   </form>
+															   </td></tr>
+                                    </table>
+                                                           {%endif%}
+														   
+														   
+														   
+                                                           {%if(detail.type=='Formateur')%}
+                                  <table  width="100%">
+                                                           <tr><td rowspan="8">
+                                                                    <img class="img-responsive sin-on" src="{{asset('images/'~detail.image)}}" alt="" />
+                                                                </td>
+                                                           <td style="font-size: 24px">Nom: {{detail.nom}}</td>
+                                                        <tr><td>      <p style="font-size: 24px">Prénom: {{detail.prenom}}</p></td></tr>
+                                                         <tr><td>      <p style="font-size: 24px">Email: {{detail.email}}</p></td></tr>
+                                                          <tr><td>      <p style="font-size: 24px">Téléphone: {{detail.telephone}}</p></td></tr>
+                                                           <tr><td>      <p style="font-size: 24px">Date de naissance: {{detail.datenaissance|date('Y-m-d')}}</p></td></tr>
+                                                           <tr><td>      <p style="font-size: 24px">Années d'experiences: {{detail.experience}}</p></td></tr>
+                                                            <tr><td>      <p style="font-size: 24px">Spécialité: {{detail.specialite}}</p></td></tr>
+                                                           <tr><td>   <a href="#" class="fast"> <p style="font-size: 24px">Inviter</p></a>
+                                                               </td></tr>
+															   <tr><td>
+															   {% if(app.user.type==detail.type)%}
+															   
+															 <h1>  {{app.user.id}}</h1>
+															   
+															   {%endif%}
+															   {%if(app.user.type!=detail.type) %}
+															    alert('nononono');
+																
+															   {%endif%}
+															   <form method=post action="{{path('invitation_formateur')}}">
+															   <input name="user" type=text value="{{app.user.id}}"/>
+															   <input name="formateur" type=text value="{{detail.id}}"/>
+															    <input type="submit" value="Inviter"/>
+															   </form>
+															   </td></tr>
+                                                            </table>
+                                                           {%endif%}
+                                                           
+                                                          	
+							
+							<div class="clearfix"> </div>
+					
+					</div>
+                                                            
+							
+					<div class="clearfix"> </div>
+				</div>
+				<nav>
+				  <ul class="pagination blog-pagination">
+					<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+					<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+					<li><a href="#">2 <span class="sr-only"></span></a></li>
+					<li><a href="#">3 <span class="sr-only"></span></a></li>
+					<li><a href="#">4 <span class="sr-only"></span></a></li>
+					<li><a href="#">5 <span class="sr-only"></span></a></li>
+					 <li> <a href="#" aria-label="Next"><span aria-hidden="true">»</span> </a> </li>
+				  </ul>
+				</nav>
+			</div>
+			</div>
+	<!-- //blogs -->
+	</div>
+{% endblock %}    

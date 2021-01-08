@@ -1,0 +1,37 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+</br>
+    <h1>Inscription entreprise</h1>
+</br>    
+{{ form_start(form, {'method': 'post', 'action': path('register_Entreprise'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+   </br>
+   {{ form_widget(form.nom,{ 'attr': {'class': 'form-control input-md', 'placeholder':"Nom"} }) }}
+   </br>
+    {{ form_widget(form.username,{ 'attr': {'class': 'form-control input-md', 'placeholder':"Nom d'utilisateur"} }) }}
+     </br>
+    {{ form_widget(form.plainPassword.first,{ 'attr': {'class': 'form-control input-md', 'placeholder':"Mot de passe"} }) }}
+     </br>
+     {{ form_widget(form.plainPassword.second,{ 'attr': {'class': 'form-control input-md', 'placeholder':"Vérification du mot de passe"} }) }}
+    </br>
+    {{ form_widget(form.email,{ 'attr': {'class': 'form-control input-md', 'placeholder':"E-mail"} }) }}
+     </br>
+    {{ form_widget(form.domaine,{ 'attr': {'class': 'form-control input-md'} }) }}
+     </br> 
+     {{ form_widget(form.telephone,{ 'attr': {'class': 'form-control input-md', 'placeholder':"Numéro de téléphone"} }) }}
+     </br>
+     {{ form_widget(form.adresse,{ 'attr': {'class': 'form-control input-md', 'placeholder':"Adresse"} }) }}
+     </br>
+     {{ form_widget(form.document,{ 'attr': {'class': 'form-control input-md', 'placeholder':"Document"} }) }}
+    </br>
+    {{ form_widget(form.image,{ 'attr': {'class': 'form-control input-md', 'placeholder':"Image"} }) }}
+     </br> 
+     
+    {{ form_rest(form) }}
+    <div>
+        <input type="submit" value="{{ 'registration.submit'|trans }}"  class="btn btn-success" />
+    </div>
+{{ form_end(form) }}
+{% endblock fos_user_content %}

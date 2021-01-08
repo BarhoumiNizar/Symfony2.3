@@ -1,0 +1,18 @@
+mooc_admin_back_offie:
+    resource: "@MoocAdminBackOffieBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+
+
+mooc_acceuil:
+    resource: "@MoocAcceuilBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    
+    
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation

@@ -1,0 +1,91 @@
+<div class="col-lg-12">
+    <form id="formsub" name="fos_user_registration_form" method="POST" action= "{{ path('tunisia_mall_profile_edituser',{'filter':form.vars.value.id}) }}" class="form-horizontal">
+<fieldset>
+<div id="fos_user_registration_form">
+    <div>
+<!-- Form Name -->
+
+   
+    
+<!-- Name input-->
+<div class="form-group">
+    <div class="colorred">{{ form_errors(form.nom) }}</div>
+  <div class="col-md-4 control-label required"> {{ form_label(form.nom)}}</div>  
+  <div class="col-md-4">
+{{ form_widget(form.nom) }}
+  </div>
+</div>
+<!-- Last input-->
+<div class="form-group">
+       <div class="colorred">{{ form_errors(form.prenom) }}</div>
+  <div class="col-md-4 control-label required">{{ form_label(form.prenom)}}</div>  
+  <div class="col-md-4">
+  {{ form_widget(form.prenom) }}
+  </div>
+</div>
+<!-- Age input-->
+<div class="form-group">
+     <div class="colorred">{{ form_errors(form.age) }}</div>
+  <div class="col-md-4 control-label required" >{{ form_label(form.age)}}</div>  
+  <div class="col-md-4">
+  {{ form_widget(form.age) }}
+  </div>
+</div>
+<!-- Sex Radios (inline) -->
+<div class="form-group">
+    <div class="colorred">{{ form_errors(form.sex) }}</div>
+<label class="required col-md-4 control-label required">{{ form_label(form.sex)}}</label>
+<div class="col-md-4" id="fos_user_registration_form_sex">
+{{ form_widget(form.sex) }}
+</div>
+</div>
+<!--endsex-->
+<!-- Relationship Select Basic -->
+<div class="form-group">
+       <div class="colorred">{{ form_errors(form.civilite) }}</div>
+<label for="fos_user_registration_form_civilite" class="col-md-4 control-label required">{{ form_label(form.civilite)}}</label>
+<div class="col-md-4">
+{{ form_widget(form.civilite) }}
+</div>
+</div>
+<!-- endrelation-->
+<!--Adresse Textarea -->
+<div class="form-group">
+     <div class="colorred">{{ form_errors(form.adresse) }}</div>
+  <div class="required col-md-4 control-label">{{ form_label(form.adresse)}}</div>
+  <div class="col-md-4">                     
+   {{ form_widget(form.adresse) }}
+  </div>
+</div>
+
+
+
+
+
+{{ form_widget(form._token) }}
+{{ form_widget(form.id) }}
+</div>
+</div>
+</fieldset>
+  <div class="modal-footer">
+        
+      <button  onclick="submiFtorm()" class="btn btn-default">Update</button>
+      </div>
+</form>
+                    </div>
+<script>
+    function submiFtorm()
+{
+    $("#formsub").ajaxForm({success: function(data){
+           $('#form').html(data);
+        }});
+}
+
+var autocomplete;
+$('#fos_user_registration_form_adresse').keyup(function() {
+    autocomplete = new google.maps.places.Autocomplete(
+        (document.getElementById('fos_user_registration_form_adresse')),
+        { types: ['geocode'] }
+    );
+});
+</script>

@@ -1,0 +1,56 @@
+        <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Edit Users <small>Edit all the Users</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="glyphicon glyphicon-tags"></i> Users/Edit Users
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+        <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-8">
+                        <h2></h2>
+                            </div>
+                            <div class="col-lg-4" style="margin-top: 2%;">
+                           <div class="input-group">
+                               <input type="text" class="form-control" {% if id!='null' %}value="{{id}}" {% endif %} placeholder="Find User By ID" name="find" id="find">
+            <div class="input-group-btn">
+                <span class="btn btpiden-default"><i class="glyphicon glyphicon-search"></i></span>
+            </div>
+        </div>
+                        </div>
+                        </div>
+                    </div>
+        </div>
+<div id="form"  class="row">
+                    
+                 
+                </div>
+<script>                              
+$(document).ready(function(){
+loadform('{{id}}');
+}); 
+$('#find').keyup(function() {
+loadform(document.getElementById("find").value);
+});
+function loadform(a)
+{
+if(a=="")
+    a="null";
+    $.ajax({ url: "/PiMoocWeb1/web/app_dev.php/admin/edituserr/"+a,
+    type:'GET',
+        success: function(data){
+           $('#form').html(data);
+        }});}
+
+
+
+
+</script>
+                                
+      

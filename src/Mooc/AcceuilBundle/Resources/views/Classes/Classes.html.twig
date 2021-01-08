@@ -1,0 +1,98 @@
+{% extends "MoocAcceuilBundle:TemplateMooc:layout.html.twig" %}
+{% block styleAndJS %}
+<link href="{{ asset('css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<!-- Custom Theme files -->
+<link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="{{ asset('css/lightbox.css') }}" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Literacy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- for bootstrap working -->
+	<script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
+<!-- //for bootstrap working -->
+<script src="{{ asset('js/responsiveslides.min.js') }}"></script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+      // Slideshow 1
+      $("#slider1").responsiveSlides({
+         auto: true,
+		 nav: true,
+		 speed: 500,
+		 namespace: "callbacks",
+      });
+    });
+  </script>
+  <!-- web-fonts -->
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,600italic,400italic,600,300italic,300,700italic,800,800italic' rel='stylesheet' type='text/css'>
+	<!-- web-fonts -->
+<script type="text/javascript" src="{{ asset('js/move-top.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/easing.js') }}"></script>
+<!--/script-->
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+</script>    
+{% endblock %}    
+{% block container %}
+<div class="content">
+		<!----> 
+<div class="gallery">
+		<div class="container">
+			<h2 class="heading text-center">Our Classes</h2>
+			<div class="gallery-bottom">
+					<div class="col-md-3 gallery-grid">
+						<a class="example-image-link" href="{{ asset('images/g1.jpg') }}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{ asset('images/g1.jpg') }}" alt=""/></a>
+					</div>
+					<div class="col-md-3 gallery-grid">
+						<a class="example-image-link" href="{{ asset('images/g2.jpg') }}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{ asset('images/g2.jpg') }}" alt=""/></a>
+					</div>
+					<div class="col-md-3 gallery-grid">
+						<a class="example-image-link" href="{{ asset('images/g3.jpg') }}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{ asset('images/g3.jpg') }}" alt=""/></a>
+					</div>
+					<div class="col-md-3 gallery-grid">
+						<a class="example-image-link" href="{{ asset('images/g4.jpg') }}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{ asset('images/g4.jpg') }}" alt=""/></a>
+					</div>
+					<div class="col-md-3 gallery-grid">
+						<a class="example-image-link" href="{{ asset('images/g5.jpg') }}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{ asset('images/g5.jpg') }}" alt=""/></a>
+					</div>
+					<div class="col-md-3 gallery-grid">
+						<a class="example-image-link" href="{{ asset('images/g6.jpg') }}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{ asset('images/g6.jpg') }}" alt=""/></a>
+					</div>
+					<div class="col-md-3 gallery-grid">
+						<a class="example-image-link" href="{{ asset('images/g1.jpg') }}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{ asset('images/g1.jpg') }}" alt=""/></a>
+					</div>
+					<div class="col-md-3 gallery-grid">
+						<a class="example-image-link" href="{{ asset('images/g8.jpg') }}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{ asset('images/g8.jpg') }}" alt=""/></a>
+					</div>
+					<div class="col-md-3 gallery-grid">
+						<a class="example-image-link" href="{{ asset('images/g9.jpg') }}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{ asset('images/g9.jpg') }}" alt=""/></a>
+					</div>
+					<div class="col-md-3 gallery-grid">
+						<a class="example-image-link" href="{{ asset('images/g3.jpg') }}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{ asset('images/g3.jpg') }}" alt=""/></a>
+					</div>
+					<div class="col-md-3 gallery-grid">
+						<a class="example-image-link" href="{{ asset('images/g11.jpg') }}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{ asset('images/g11.jpg') }}" alt=""/></a>
+					</div>
+					<div class="col-md-3 gallery-grid">
+						<a class="example-image-link" href="{{ asset('images/g12.jpg') }}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{ asset('images/g12.jpg') }}" alt=""/></a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				
+		 </div>
+	 </div>
+<script src="{{ asset('js/lightbox.js') }}"></script>
+<!----> 
+
+	</div>    
+{% endblock %}    

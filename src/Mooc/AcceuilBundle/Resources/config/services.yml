@@ -1,0 +1,15 @@
+services:
+    MoocAcceuil.form.registration.Apprenant:
+        class: Mooc\AcceuilBundle\Form\RegistrationTypeApprenant
+        tags:
+            - { name: form.type, alias: app_user_registration }
+
+    MoocAcceuil.form.registration.Formateur:
+        class: Mooc\AcceuilBundle\Form\RegistrationTypeFormateur
+        tags:
+            - { name: form.type, alias: app_user_registration }
+    
+    MoocAcceuil.form.registration.Entreprise:
+        class: Mooc\AcceuilBundle\Form\RegistrationTypeEntreprise
+        tags:
+            - { name: form.type, alias: app_user_registration }        

@@ -1,0 +1,4 @@
+services:
+#    mooc_admin_back_offie.example:
+#        class: Mooc\AdminBackOffieBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
